@@ -49,12 +49,37 @@ TEST(PracticeTest, is_not_simple_palindrome_close_words)
     ASSERT_FALSE(actual);
 }
 
+TEST(PracticeTest, is_simple_palindrome_even_words)
+{
+    Practice obj;
+    bool actual = obj.isPalindrome("LoOl");
+    ASSERT_TRUE(actual);
+}
+
 TEST(PracticeTest, is_descending)
 {
     Practice obj;
 	int first = 1;
 	int second = 2;
 	int third = 3;
+	bool actual;
+    obj.sortDescending(first, second, third);
+	if (first >= second && second >= third)
+	{
+		actual = true;
+	}else
+	{
+		actual = false;
+	}
+	ASSERT_TRUE(actual);    
+}
+
+TEST(PracticeTest, is_descending_blank_inputs)
+{
+    Practice obj;
+	int first;
+	int second;
+	int third ;
 	bool actual;
     obj.sortDescending(first, second, third);
 	if (first >= second && second >= third)
